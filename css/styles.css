@@ -1,0 +1,540 @@
+/* 
+Gnarlarm
+The Original Smart Surf Alarm
+Developer: Blair McDonald
+Version: 1.0 - October 2015
+*/
+
+/*
+ 1. - GLOBAL STYLING
+ 1.1 - Setup
+ 1.2 - Typography
+
+ 2. - SPECIFIC STYLING
+ 2.1 - Typography
+ 2.2 - Small Viewport Layout
+ 2.3 - Responsive Layout
+*/
+
+/*  1.1 - GLOBAL - Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Box Model Hack */
+
+* {
+    -moz-box-sixing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Clearfix Hack */
+
+.cf:before, .cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+
+/*  1.3 - GLOBAL - Typography
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Font Rendering Fix on Mac OSX */
+
+* {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Base Fonts & Relative Font Size */
+
+html {
+    font-family: 'Source Code Pro', 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+
+/*  2.1 - SPECIFIC STYLING - Typography
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* Relative Font Size = Target / Context */
+
+h1, h2, h3, h4, p, ul {
+    font-weight: 400;
+}
+
+h1, h2, h3, h4 {
+    text-transform: uppercase;
+    text-align: center;
+    color: #3989ee;
+}
+
+h1 {
+    font-size: 2.5rem; /* 40px / 16px */
+    line-height: 2.5rem; /* 38px / 16px */
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.75rem; /* 28px / 16px */
+    line-height: 2.125rem; /* 34px / 16px */
+    margin: 0;
+}
+
+h3 {
+    font-size: 1.364rem; /* 22px / 16px */
+    margin: 0 0 20px 0;
+}
+
+h4 {
+    font-size: 1.125rem; /* 18px / 16px */
+    margin: 0;
+}
+
+p {
+    color: #163e66;
+    margin: 20px 0 30px 0;
+}
+
+p, q {
+    text-align: center;
+    font-size: 0.9375rem; /* 15px / 16px */
+    line-height: 1.2rem; /* 19px / 16px */
+}
+
+ul {
+    font-size: 0.9375rem; /* 15px / 16px */
+    line-height: 1.2rem; /* 19px / 16px */
+    color: #163e66;
+    margin: 20px auto 30px auto;
+    padding-left: 25px;
+}
+
+a {
+    display: block;
+    text-align: center;
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
+
+a.button-primary {
+    font-size: 1.125rem; /* 18px / 16px */
+    font-weight: 600;
+}
+
+q {
+    display: block;
+    font-weight: 400;
+    color: white;
+}
+
+p span {
+    font-weight: 600;
+}
+
+nav a, nav h2 {
+    font-size: 1.875rem; /* 30px / 16px */
+}
+
+
+/* Individual Styles */
+
+#splash h3 {
+    color: #163e66;
+}
+
+#intro h4 {
+    margin-bottom: 0;
+}
+
+#premium h2, #premium ul, #subscribe h2, #subscribe p {
+    color: white;
+}
+
+#premium h3 {
+    margin-top: 30px;
+    font-weight: 500;
+    color: #fae76e;
+}
+
+.testimonial-slide p {
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-style: italic;
+    color: white;
+    margin-bottom: 0px;
+}
+
+.terms {
+    font-size: 0.75rem;
+}
+
+/*  2.2 - SPECIFIC STYLING - Small Viewport Layout
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+img {
+    display: block;
+    margin: 10px auto;
+}
+
+/* Section Base Styles */
+
+#splash {
+    height: 100vh;
+    background: #bbeed0 center no-repeat url(../images/hero-image.jpg);
+    padding-bottom: 15px;
+}
+
+#mobile-navigation {
+    background-color: #fc4380;
+}
+
+#intro {
+    background-color: #f9d5ca;
+}
+
+#premium {
+    background-color: #2ac8e0;
+}
+
+#bonus {
+    background-color: #fae76e;
+}
+
+#testimonials {
+    background-color: #c9f2cf;
+    padding-bottom: 0;
+}
+
+#get-it {
+    background-color: #fabce5;
+}
+
+#subscribe {
+    background-color: #8293eb;
+}
+
+section {
+    margin: 0;
+    overflow: auto;
+    padding: 40px 0;
+}
+
+.quote {
+    display: block;
+    position: relative;
+    top: -50px;
+    width: 90%;
+    min-width: 280px;
+    margin: auto;
+    background-color: #5d74eb;
+    padding: 60px 30px 15px 30px;
+}
+
+#slide-1:before, #slide-2:before, #slide-3:before, #slide-4:before {
+    content: " ";
+    display: block;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#slide-1:before {
+    background-image: url(../images/spicoli.png);
+}
+
+#slide-2:before {
+    background-image: url(../images/johnny-utah.png);
+}
+
+#slide-3:before {
+    background-image: url(../images/anne-marie.png);
+}
+
+#slide-4:before {
+    background-image: url(../images/rick.png);
+}
+
+footer {
+    padding-top: 30px;
+}
+
+/* Containing Content */
+
+.container {
+    position: relative;
+    width: 80%;
+    min-width: 280px;
+    margin: auto;
+}
+
+/* Button Styles */
+
+.button-primary {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 50px;
+    padding: 14px;
+    background-color: #3989ee;
+    box-shadow: 5px 5px rgba(108, 92, 87, 0.25);
+}
+
+.button-primary:hover {
+    background-color: #337bd6;
+}
+
+.download-buttons {
+    margin: auto;
+    text-align: center;
+}
+
+#get-it a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#get-it a:hover {
+    opacity: 0.8;
+}
+
+#get-it a img {
+    margin: 5px 0;
+}
+
+/* Other Styles */
+
+.center {
+    position: relative;
+    top: 41%;
+    transform: translateY(-41%);
+}
+/*
+.scroll-down {
+    position: absolute;
+    bottom: 5px;
+    margin: auto;
+    width: 100%;
+}
+
+.scroll-down a {
+    position: relative;
+    margin: auto;
+    width: 50px;
+    padding: 15px;
+}
+*/
+
+.icon-scroll,
+.icon-scroll:before {
+  position: absolute;
+  left: 50%;
+}
+.icon-scroll {
+  width: 40px;
+  height: 70px;
+  margin-left: -20px;
+  top: 50%;
+  margin-top: -35px;
+  box-shadow: inset 0 0 0 1px #fff;
+  border-radius: 25px;
+}
+.icon-scroll:before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  margin-left: -4px;
+  top: 8px;
+  border-radius: 4px;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: scroll;
+          animation-name: scroll;
+}
+@-webkit-keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(46px);
+            transform: translateY(46px);
+  }
+}
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(46px);
+            transform: translateY(46px);
+  }
+}
+
+
+#mobile-navigation {
+    padding: 0;
+}
+
+#mobile-navigation .nav-header {
+    background-color: white;
+    height: 57px;
+    z-index: 100;
+}
+
+.nav-header:after {
+    display: block;
+    content: " ";
+    background-image: url(../images/bottom-edge.png);
+    background-repeat: repeat-x;
+    background-position: top;
+    width: 100%;
+    height: 50px;
+    z-index: 50;
+}
+
+.nav-logo {
+    display: inline-block;
+}
+
+.hamburger-icon {
+    display: inline-block;
+    float: right;
+    margin: auto;
+    padding-top: 8px;
+}
+
+#nav-expanded {
+    height: 100vh;
+    padding-top: 20px;
+}
+
+#nav-expanded p {
+    display: block;
+    padding-top: 30px;
+    color: white;
+}
+
+.mobile a {
+    margin: 30px auto;
+}
+
+.mobile a:first-of-type {
+    margin-top: 40px;
+}
+
+.mobile a:hover {
+    color: #fae76e;
+}
+
+#main-navigation {
+    display: none;
+}
+
+#splash img {
+    margin: auto;
+}
+
+#subscribe p {
+    margin-bottom: 20px;
+}
+
+form {
+    text-align: center;
+}
+
+input {
+    margin: 5px auto;
+    width: 100%;
+    height: 50px;
+    padding: 0 10px;
+}
+
+input#submit {
+    margin-top: 10px;
+    border: none;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+}
+
+footer img {
+    display: block;
+    margin: auto;
+}
+
+/* #nav-expanded {
+    display: none;
+} */
+
+/*  2.3 - SPECIFIC STYLING - Responsive Layout
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@media only screen and (min-height: 900px) {
+    #splash {
+        background: #bbeed0 center/cover no-repeat url(../images/hero-image.jpg);
+        padding-bottom: 15px;
+    }
+}
+
+ @media only screen and (min-width: 1500px) {
+    #splash {
+        background: #bbeed0 center/cover no-repeat url(../images/hero-image.jpg);
+        padding-bottom: 15px;
+    }
+}
+
+@media only screen and (min-height: 570px) {
+    .center {
+    position: relative;
+    top: 45%;
+    transform: translateY(-45%);
+}
+}
+
+/* Medium Viewports */
+
+@media only screen and (min-width: 768px) {
+    
+    input {
+        display: inline-block;
+        width: auto;
+    }
+    
+    .button-primary {
+        max-width: 300px;
+    }
+    
+    #mobile-navigation {
+        display: none;
+    }
+    
+    #main-navigation {
+        display: grid;
+    }
+}
+
+/* Large Viewports */
+
+@media only screen and (min-width: 960px) {
+    .container {
+        max-width: 700px;
+    }
+}
+
+/* Extra-Large Viewports */
+
+@media only screen and (min-width: 1200px) {
+    
+}
